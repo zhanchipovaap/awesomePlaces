@@ -6,7 +6,7 @@ part of 'place_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
+PlaceDto _$PlaceFromJson(Map<String, dynamic> json) => PlaceDto(
       id: (json['id'] as num).toInt(),
       name: json['name'] as String,
       lat: (json['lat'] as num).toDouble(),
@@ -16,7 +16,7 @@ Place _$PlaceFromJson(Map<String, dynamic> json) => Place(
       urls: (json['urls'] as List<dynamic>).map((e) => e as String).toList(),
     );
 
-Map<String, dynamic> _$PlaceToJson(Place instance) => <String, dynamic>{
+Map<String, dynamic> _$PlaceToJson(PlaceDto instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'lat': instance.lat,

@@ -1,11 +1,9 @@
-import 'package:meta/meta.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'dart:convert';
 
 part 'place_dto.g.dart';
 
 @JsonSerializable()
-class Place {
+class PlaceDto {
     @JsonKey(name: "id")
     int id;
     @JsonKey(name: "name")
@@ -21,7 +19,7 @@ class Place {
     @JsonKey(name: "urls")
     List<String> urls;
 
-    Place({
+    PlaceDto({
         required this.id,
         required this.name,
         required this.lat,
@@ -31,7 +29,7 @@ class Place {
         required this.urls,
     });
 
-    Place copyWith({
+    PlaceDto copyWith({
         int? id,
         String? name,
         double? lat,
@@ -40,7 +38,7 @@ class Place {
         String? type,
         List<String>? urls,
     }) => 
-        Place(
+        PlaceDto(
             id: id ?? this.id,
             name: name ?? this.name,
             lat: lat ?? this.lat,
@@ -50,7 +48,7 @@ class Place {
             urls: urls ?? this.urls,
         );
 
-    factory Place.fromJson(Map<String, dynamic> json) => _$PlaceFromJson(json);
+    factory PlaceDto.fromJson(Map<String, dynamic> json) => _$PlaceFromJson(json);
 
     Map<String, dynamic> toJson() => _$PlaceToJson(this);
 }
